@@ -179,9 +179,6 @@
             position: relative;
             width: 400px;
             height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .profile-ring {
@@ -344,25 +341,56 @@
             background: var(--bg-secondary);
         }
 
-        .portfolio-message {
-            text-align: center;
-            padding: 5rem 2rem;
+        /* -----------------------------
+           Updated Portfolio Section CSS
+        ----------------------------- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
             background: var(--bg-primary);
-            border-radius: 20px;
-            border: 2px dashed var(--border);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+            transition: all 0.3s;
         }
 
-        .portfolio-message h3 {
-            font-size: 2rem;
-            color: var(--accent);
+        .portfolio-placeholder {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #000;
+            border-radius: 10px;
             margin-bottom: 1rem;
+            background: linear-gradient(135deg, #10b981, #34d399);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .portfolio-message p {
+        .portfolio-item p {
             color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            padding: 0 0.5rem;
+        }
+
+        .portfolio-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+
+        .portfolio-item:hover .portfolio-placeholder {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
         }
 
         .contact-wrapper {
@@ -437,7 +465,6 @@
             font-size: 2rem;
             color: var(--accent);
             margin-bottom: 0.8rem;
-            display: block;
         }
 
         .social-item a {
@@ -517,7 +544,7 @@
     </style>
 </head>
 <body>
-
+    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">ARA</div>
@@ -531,6 +558,7 @@
         </div>
     </nav>
 
+    <!-- Home Section -->
     <section id="home">
         <div class="container">
             <div class="hero">
@@ -554,6 +582,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
@@ -589,6 +618,7 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services">
         <div class="container">
             <div class="section-header">
@@ -596,114 +626,4 @@
                 <div class="underline"></div>
             </div>
             <div class="services-container">
-                <div class="service-box">
-                    <div class="service-icon">🔎</div>
-                    <h3>Keyword Strategy</h3>
-                    <p>In-depth keyword analysis identifying high-converting search terms that align with your business objectives and target audience behavior.</p>
-                </div>
-                <div class="service-box">
-                    <div class="service-icon">⚡</div>
-                    <h3>Technical SEO</h3>
-                    <p>Complete technical website optimization addressing crawlability, site speed, mobile responsiveness, and structural improvements.</p>
-                </div>
-                <div class="service-box">
-                    <div class="service-icon">📋</div>
-                    <h3>SEO Analysis</h3>
-                    <p>Detailed website assessments uncovering technical gaps, content opportunities, and actionable recommendations for improvement.</p>
-                </div>
-                <div class="service-box">
-                    <div class="service-icon">📝</div>
-                    <h3>Content Planning</h3>
-                    <p>Strategic content roadmaps designed to establish topical expertise and address user search intent at every funnel stage.</p>
-                </div>
-                <div class="service-box">
-                    <div class="service-icon">🌍</div>
-                    <h3>Platform Optimization</h3>
-                    <p>Expert optimization for WordPress and Blogger.com platforms, maximizing visibility potential within each ecosystem.</p>
-                </div>
-                <div class="service-box">
-                    <div class="service-icon">📊</div>
-                    <h3>Performance Tracking</h3>
-                    <p>Comprehensive analytics implementation and reporting delivering clear insights for informed strategic decisions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2>Portfolio</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="portfolio-message">
-                <h3>⚡ Exciting Projects Underway</h3>
-                <p>Currently developing comprehensive case studies showcasing real SEO implementations and measurable outcomes. Stay tuned for detailed project breakdowns and performance metrics!</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Let's Connect</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Ready to boost your rankings?</h3>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">Let's discuss how strategic SEO can transform your online presence and drive qualified traffic to your business.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                            <a href="mailto:abdulrafayalmani08@gmail.com">abdulrafayalmani08@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-                            <a href="https://wa.me/923173280207">+92 317 3280207</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-grid">
-                    <div class="social-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/abdul-rafay-almani" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="social-item">
-                        <i class="fab fa-behance"></i>
-                        <a href="https://www.behance.net/abdulrafay325" target="_blank">Behance</a>
-                    </div>
-                    <div class="social-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/Abdulrafay-08" target="_blank">GitHub</a>
-                    </div>
-                    <div class="social-item">
-                        <i class="fab fa-instagram"></i>
-                        <a href="https://www.instagram.com/abdul_rfyy?igsh=MTEwZ2VheTExM2lleQ==" target="_blank">Instagram</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Abdul Rafay Almani. All rights reserved.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Crafted with dedication to SEO excellence.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
-
-</body>
-</html>
+                <div class="service
