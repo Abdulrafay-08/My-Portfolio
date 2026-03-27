@@ -2,13 +2,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abdul Rafay | SEO & Copywriting Expert</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
 
+.social-links a {
+    text-decoration: none;
+    color: var(--text);
+    background: var(--card);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.social-links a:hover {
+    background: var(--accent);
+    color: black;
+    transform: translateY(-3px);
+}
+
+.social-links i {
+    margin-right: 8px;
+}
 :root{
 --bg:#0f0f0f;
 --card:#1a1a1a;
@@ -144,7 +170,21 @@ border-radius:15px;
 }
 
 .cta h3{margin-bottom:1rem;}
+<section>
+    <div class="container">
+        <h2>Connect With Me</h2>
 
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/abdul-rafay-almani" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+
+            <a href="https://github.com/Abdulrafay-08" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+</section>
 /* FOOTER */
 footer{
 text-align:center;
